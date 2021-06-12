@@ -30,6 +30,7 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&uni
                     }
                 })
                 console.log(foreCastArray);
+                displayForecast(foreCastArray);
             })
         })
     })
