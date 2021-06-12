@@ -1,18 +1,18 @@
 .nav {
     height: 170px;
-    background-color: rgb(183, 213, 255);
+    background-color: rgb(190, 190, 190);
     border-bottom: 2px solid black;
     
 }
 
 .header {
-    font-family: 'Shrikhand', cursive;
-    font-size: 60px;
-    color: rgb(255, 239, 148);
+    font-family: 'Optima', sans-serif;
+    font-size: 70px;
+    color: rgb(70, 69, 66);
     padding: 50px 0 0 50px;
     z-index: 2;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: rgb(19, 36, 66);
+    -webkit-text-stroke-width: 3.5px;
+    -webkit-text-stroke-color: rgb(1, 6, 15);
 }
 
 .clouds {
@@ -23,13 +23,13 @@
 }
 
 .content {
-    background-color: black;
+    background-color: rgb(221, 25, 25);
     height: 100%;
     border-bottom: 4px solid black;
 }
 
 .left-column {
-    background-image: url(""); 
+    /* background-image: url("../images/pexels-brayden-law-2096700.jpg");  */
     text-align: center;
     justify-content: center;
     height: 700px;
@@ -47,38 +47,46 @@
 
 .search-box {
     border-radius: 5px;
+    margin: 15px 0 35px 0;
 }
 
-.search-field:hover {
-    transform: scale(1.01);
+.search-box:hover {
+    transform: scale(.99);
+    opacity: 90%;
 }
 
 .search-btn {
     border-radius: 5px; 
-    background-color: rgb(183, 213, 255);
+    background-color: rgb(24, 113, 238);
 }
 
 .search-btn:hover {
-    transform: scale(1.05);
+    transform: scale(.99);
+    border-color: rgb(56, 56, 56);
 }
 
 .city-box {
     width: 300px;
     height: 50px;
-    background-color: rgb(230, 224, 224);
+    background-color: rgb(187, 186, 182);
     z-index: 1;
-    margin: 20px auto 0 auto; 
+    margin: 30px auto 0 auto; 
     border-radius: 8px;
     border-style: groove;
     border-color: black;
+    text-align: center;
+}
+
+.city-box:hover {
+    transform: scale(.98);
 }
 
 .user-city {
     color: rgb(0, 0, 0); 
-    width: 50px;
-    text-align:left;
+    width: 100%;
+    text-align: center; 
     font-size: 24px;
-    margin: 5px 0 0 5px;
+    margin: 7px auto 0 auto;
 }
 
 .results-column {
@@ -90,10 +98,17 @@
     text-align: center;
 }
 
+.date-text {
+    font-size: 14px;
+    margin: -720px 0 0 900px;
+}
+
 .results-head {
+    font-size: 36px;
+    text-decoration: underline 2px;
     flex-wrap: wrap; 
     text-align: center;
-    padding-top: 25px; 
+    margin: 100px 0 25px 0; 
     font-family: 'Lato', sans-serif;
 }
 
@@ -106,38 +121,99 @@
     text-align: center;
 }
 
-.humidity-text, 
-.wind-text,
-.temp-text {
-    font-family: inherit;
-    text-align: center;
-    color: black;
+.weather-icon {
+    height: 180px;
+    width: 180px;
+    margin-bottom: 20px;
 }
 
-.uv-box-fav{
-    height: 50px;
-    width: 200px; 
-    background-color: rgb(70, 221, 70); 
+.temp-text {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    color: black;
+    font-size: 28px;
+}
 
+.humidity-text, 
+.wind-text     {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    color: black;
+    font-size: 18px;
+}
+
+.uv-box-fav,
+.uv-box-mod,
+.uv-box-sev {
+    margin: 0 auto 0 auto; 
+    border-radius: 8px;
+    height: 30px;
+    width: 100px; 
+}
+
+.uv-box-fav {
+    background-color: rgb(70, 221, 70); 
 }
 
 .uv-box-mod{
-    height: 50px;
-    width: 200px; 
     background-color: rgb(250, 166, 56); 
-
 }
 
 .uv-box-sev{
-    height: 50px;
-    width: 200px; 
     background-color: rgb(250, 56, 56); 
+}
 
+.uvi-text {
+    padding-top: 5px;
+    font-family: 'Lato', sans-serif; 
+    font-size: 18px;
+    color: white; 
+}
+
+.forecast-box {
+    display: flex; 
+    width: 100%; 
+    color:rgb(19, 36, 66); 
+    margin-top: 70px;
+}
+
+.daily-box {
+    display: flex;
+    width: 25%;
+    height: 120px; 
+    margin: 0 5px; 
+    background-color: white; 
+    border-style: double;
+    border-color: rgb(0, 120, 175); 
+    border-width: 6px;
+    box-shadow: 6px 5px 5px rgb(87, 87, 87);
+}
+
+.small-weather-icon {
+    flex-wrap: wrap;
+    margin: 5px 0 0 5px;
+    height: 40px;
+    width: 40px;
+}
+
+.forecast-text {
+    flex-wrap: wrap;
+    padding: 8px 0 0 0;
+    margin-bottom: -5px;
+    font-size: 14px;
 }
 
 .right-column {
-    background-color: rgb(183, 213, 255);
+    background-color: rgb(233, 237, 243);
     border-left: 2px solid black; 
     border-top: 2px solid black;
     border-radius: 8px;
+}
+#5dayForecast{
+    display:flex;
+    flex-direction: column;
+}
+#forecastResults{
+    display:flex;
+    flex-direction: row;
 }

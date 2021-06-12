@@ -1,8 +1,15 @@
+var apiKey = "736e5272d944201c50faf6e4659553f3";
 var searchColumn = document.querySelector("#leftColumn")
 var resultsContainer = document.querySelector("#resultsContainer");
 var searchInput = document.querySelector("#searchBox");
 var searchBtn = document.querySelector("#searchBtn"); 
-var apiKey = "736e5272d944201c50faf6e4659553f3";
+var resultsColumn = document.querySelector("#resultsColumn");
+var userSearch; 
+var foreCastArray = []
+var dateEl = document.createElement("h3")
+dateEl.textContent = moment().format("dddd, MMMM Do YYYY");
+dateEl.className = "col-2 date-text"; 
+resultsColumn.append(dateEl);
 
 var fetchWeather = function(lat, lon) {
 fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`)
@@ -11,8 +18,21 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&uni
             displayWeather(data);
             console.log(data);
         })
-    }) 
-    
+    }).then(function(){
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`)
+        .then(function(response) {
+            response.json().then(function(data){
+                // displayWeather(data);
+                console.log(data.list);
+                data.list.forEach(function(item, index){
+                    if ((index+1)%8==0){
+                        foreCastArray.push(item)
+                    }
+                })
+                console.log(foreCastArray);
+            })
+        })
+    })
 }
 
 var fetchCoor = function (city) {
@@ -22,16 +42,13 @@ fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`)
     })
     .then(function(data){
         fetchWeather(data[0].lat, data[0].lon)
-        console.log(data)
     })
-
 }
-
 
 var searchCity = function() {
     resultsContainer.innerHTML = "";
 
-    var userSearch = searchInput.value;
+    userSearch = searchInput.value;
     fetchCoor(userSearch);
 
     var userCity = document.createElement("h3");
@@ -43,14 +60,38 @@ var searchCity = function() {
 
     cityBox.append(userCity); 
     leftColumn.append(cityBox); 
-
 }
 
 var displayWeather = function(data) {
+    userSearch = searchInput.value; 
+
     var tempEl = document.createElement("h3");
-    tempEl.textContent=  "'s Weather: " + data.current.temp + "°F";
-    tempEl.class = "temp-text";
+    tempEl.textContent=  userSearch + "'s Current Temperature: " + data.current.temp + "°F";
+    tempEl.className = "temp-text";
     
+    var condition= data.current.weather[0].main; 
+
+    if (condition === "Clear") {
+        var sunnyEl = document.createElement("img");
+        sunnyEl.setAttribute("src", "./images/sun.png"); 
+        sunnyEl.className = "weather-icon"; 
+        resultsContainer.append(sunnyEl); 
+    }
+
+    else if (condition === "Clouds") {
+        var cloudyEl = document.createElement("img");
+        cloudyEl.setAttribute("src", "./images/clouds.png"); 
+        cloudyEl.className = "weather-icon"; 
+        resultsContainer.append(cloudyEl); 
+    }
+
+    else if (condition === "Rain") {
+        var rainyEl = document.createElement("img");
+        rainyEl.setAttribute("src", "./images/rain.png"); 
+        rainyEl.className = "weather-icon"; 
+        resultsContainer.append(rainyEl); 
+    }
+
     var humidityEl = document.createElement("h3")
     humidityEl.textContent = "Humidity: " + data.current.humidity + "%"; 
     humidityEl.className = "humidity-text"; 
@@ -62,7 +103,7 @@ var displayWeather = function(data) {
     var uvi = data.current.uvi;
 
     var uvBox = document.createElement("div");
-        if (uvi < 4) {
+        if (uvi < 4 || uvi === 4) {
             uvBox.className = "uv-box-fav";
         }
         else if (uvi >4 && uvi <8) {
@@ -74,13 +115,21 @@ var displayWeather = function(data) {
 
     var uvEl = document.createElement("h3");
     uvEl.textContent = "UVI: " + uvi
-    uvEl.className= "uv-text"; 
+    uvEl.className= "uvi-text"; 
     uvBox.append(uvEl); 
 
     resultsContainer.append(tempEl); 
     resultsContainer.append(humidityEl);
     resultsContainer.append(windEl); 
     resultsContainer.append(uvBox); 
+}
+var displayForecast = function(data){
+    data.forEach(function(item){
+     var card = document.createElement("div");
+     card.setAttribute("class", "forecastCard");
+     card.innerText = item.main.temp;
+     document.getElementById("forecastResults").append(card);
+    })
 }
 
 searchBtn.addEventListener("click", searchCity)
