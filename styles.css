@@ -1,0 +1,143 @@
+.nav {
+    height: 170px;
+    background-color: rgb(183, 213, 255);
+    border-bottom: 2px solid black;
+    
+}
+
+.header {
+    font-family: 'Shrikhand', cursive;
+    font-size: 60px;
+    color: rgb(255, 239, 148);
+    padding: 50px 0 0 50px;
+    z-index: 2;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(19, 36, 66);
+}
+
+.clouds {
+    margin: 20px 0 0 -40px;
+    height: 120px;
+    width: 120px;
+    z-index: 1;
+}
+
+.content {
+    background-color: black;
+    height: 100%;
+    border-bottom: 4px solid black;
+}
+
+.left-column {
+    background-image: url(""); 
+    text-align: center;
+    justify-content: center;
+    height: 700px;
+    border-radius: 8px;
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+
+}
+.search-header {
+    padding-top: 50px;
+    text-align: center;
+    color: black;
+    font-family: 'Lato', sans-serif;
+}
+
+.search-box {
+    border-radius: 5px;
+}
+
+.search-field:hover {
+    transform: scale(1.01);
+}
+
+.search-btn {
+    border-radius: 5px; 
+    background-color: rgb(183, 213, 255);
+}
+
+.search-btn:hover {
+    transform: scale(1.05);
+}
+
+.city-box {
+    width: 300px;
+    height: 50px;
+    background-color: rgb(230, 224, 224);
+    z-index: 1;
+    margin: 20px auto 0 auto; 
+    border-radius: 8px;
+    border-style: groove;
+    border-color: black;
+}
+
+.user-city {
+    color: rgb(0, 0, 0); 
+    width: 50px;
+    text-align:left;
+    font-size: 24px;
+    margin: 5px 0 0 5px;
+}
+
+.results-column {
+    background-color: rgb(255, 242, 223);
+    border-left: 2px solid black; 
+    border-right: 2px solid black;
+    border-radius: 8px;
+    border-top: 2px solid black;
+    text-align: center;
+}
+
+.results-head {
+    flex-wrap: wrap; 
+    text-align: center;
+    padding-top: 25px; 
+    font-family: 'Lato', sans-serif;
+}
+
+.results-box {
+    justify-content: center;
+    margin: 0 auto 0 auto;
+    width: 980px;
+    height: 580px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.humidity-text, 
+.wind-text,
+.temp-text {
+    font-family: inherit;
+    text-align: center;
+    color: black;
+}
+
+.uv-box-fav{
+    height: 50px;
+    width: 200px; 
+    background-color: rgb(70, 221, 70); 
+
+}
+
+.uv-box-mod{
+    height: 50px;
+    width: 200px; 
+    background-color: rgb(250, 166, 56); 
+
+}
+
+.uv-box-sev{
+    height: 50px;
+    width: 200px; 
+    background-color: rgb(250, 56, 56); 
+
+}
+
+.right-column {
+    background-color: rgb(183, 213, 255);
+    border-left: 2px solid black; 
+    border-top: 2px solid black;
+    border-radius: 8px;
+}

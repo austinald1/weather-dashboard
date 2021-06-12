@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherView</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Lato&family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel = "stylesheet" href = "./styles.css"> 
+</head>
+<body>
+    <nav class = "nav">
+        <h1 class = "header">WeatherView</h1> 
+        
+    </nav>
+    <div class = "content">
+        <div class="row">
+            <div class="col-3 left-column" id = "leftColumn">
+                <h2 class = "search-header">City Select</h2>
+                <input class = "search-box" id= "searchBox" placeholder = "Search a city . . ."></input>
+                <button class = "search-btn" id = "searchBtn">Go!</button>
+            </div>
+            <div class="col-7 results-column">
+                <h2 class = "results-head">Weather Results:</h2>
+                <div class = "results-box" id ="resultsContainer"></div>
+            </div>
+            <div class="col-2 right-column"></div>
+          </div>    
+    </div>
+<script src = "./script.js"></script>
+</body>
+</html>
