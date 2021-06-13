@@ -1,15 +1,13 @@
 var apiKey = "736e5272d944201c50faf6e4659553f3";
-var searchColumn = document.querySelector("#leftColumn")
-var resultsContainer = document.querySelector("#resultsContainer");
-var searchInput = document.querySelector("#searchBox");
-var searchBtn = document.querySelector("#searchBtn"); 
-var resultsColumn = document.querySelector("#resultsColumn");
-var userSearch; 
-var foreCastArray = []
-var dateEl = document.createElement("h3")
-dateEl.textContent = moment().format("dddd, MMMM Do YYYY");
-dateEl.className = "col-2 date-text"; 
-resultsColumn.append(dateEl);
+var searchColumn = document.querySelector('#leftColumn');
+var resultsContainer = document.querySelector('#resultsContainer');
+var searchInput = document.querySelector('#searchBox');
+var searchBtn = document.querySelector('#searchBtn');
+var resultsColumn = document.querySelector('#resultsColumn');
+var userSearch;
+var foreCastArray = [];
+var dateEl = document.getElementById('date');
+dateEl.textContent = moment().format('dddd, MMMM Do YYYY');
 
 var fetchWeather = function(lat, lon) {
 fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`)

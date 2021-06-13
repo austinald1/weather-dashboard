@@ -1,14 +1,14 @@
 .nav {
     height: 170px;
-    background-color: rgb(190, 190, 190);
+    background-color: rgb(148, 253, 122);
     border-bottom: 2px solid black;
     
 }
 
 .header {
-    font-family: 'Optima', sans-serif;
+    font-family: 'Optima', italic;
     font-size: 70px;
-    color: rgb(70, 69, 66);
+    color: rgb(51, 51, 51);
     padding: 50px 0 0 50px;
     z-index: 2;
     -webkit-text-stroke-width: 3.5px;
@@ -23,7 +23,7 @@
 }
 
 .content {
-    background-color: rgb(25, 159, 221);
+    background-color: rgb(133, 240, 183);
     height: 100%;
     border-bottom: 4px solid black;
 }
@@ -33,7 +33,6 @@
     text-align: center;
     justify-content: center;
     height: 700px;
-    border-radius: 8px;
     border-right: 2px solid black;
     border-top: 2px solid black;
 
@@ -46,7 +45,6 @@
 }
 
 .search-box {
-    border-radius: 5px;
     margin: 15px 0 35px 0;
 }
 
@@ -93,14 +91,12 @@
     background-color: rgb(255, 242, 223);
     border-left: 2px solid black; 
     border-right: 2px solid black;
-    border-radius: 8px;
     border-top: 2px solid black;
     text-align: center;
 }
 
 .date-text {
     font-size: 14px;
-    margin: -720px 0 0 900px;
 }
 
 .results-head {
@@ -207,7 +203,6 @@
     background-color: rgb(233, 237, 243);
     border-left: 2px solid black; 
     border-top: 2px solid black;
-    border-radius: 8px;
 }
 #FiveDayForecast{
     display:flex;
