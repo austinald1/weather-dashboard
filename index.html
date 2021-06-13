@@ -16,19 +16,15 @@
     <link rel = "stylesheet" href = "./styles.css"> 
 </head>
 <body>
-    <nav class = "nav">
-        <h1 class = "header">Weather Dashboard</h1>
+    <nav class = "nav ">
+        <h1 class = "header mg-auto">Weather Dashboard</h1>
         
     </nav>
-    <div class = "content">
-        <div class ="row">
-            <div class ="col-3 left-column" id = "leftColumn">
-                <h2 class = "search-header">City Select</h2>
-                <input class = "search-box" id= "searchBox" placeholder = "Search a city . . ."></input>
-                <button class = "search-btn" id = "searchBtn">Go!</button>
-            </div>
-            <div class ="col-7 results-column" id = "resultsColumn">
-                <h3 class="col-2 date-text" id="date"></h3>
+    <div class = "content ">
+        <div class ="row ">
+            
+            <div class ="col-7 results-column h2-100" id = "resultsColumn">
+                <h2 class="mg-auto" id="date"></h2>
                 <h2 class = "results-head">Todays Weather:</h2>
                 <div class = "results-box" id ="resultsContainer"></div>
                 <div id = "5dayForecast">
@@ -36,6 +32,15 @@
                     <div id = "forecastResults">
                     </div>
                 </div>
+            </div>
+            <div class ="col-3 left-column " id = "leftColumn">
+              <!--  -->
+              <div class="h-100 p-5 text-white  rounded-3">
+                <h2>City Select</h2>
+                <input class = "search-box form-control" id= "searchBox" placeholder = "City Name"></input>
+                <button class = "search-btn btn btn-outline-light" id = "searchBtn">Search</button>
+              </div>
+              <!--  -->
             </div>
             <!-- <div class="col-2 right-column"></div> -->
           </div>    
