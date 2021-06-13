@@ -209,11 +209,14 @@
     border-top: 2px solid black;
     border-radius: 8px;
 }
-#5dayForecast{
+#FiveDayForecast{
     display:flex;
     flex-direction: column;
 }
 #forecastResults{
     display:flex;
     flex-direction: row;
+}
+.forecastCard {
+    width: 85%;
 }

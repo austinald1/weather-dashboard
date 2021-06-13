@@ -74,7 +74,7 @@ var displayWeather = function(data) {
 
     if (condition === "Clear") {
         var sunnyEl = document.createElement("img");
-        sunnyEl.setAttribute("src", "./images/sun.png"); 
+        sunnyEl.setAttribute("src", "./images/clear.png"); 
         sunnyEl.className = "weather-icon"; 
         resultsContainer.append(sunnyEl); 
     }
@@ -88,7 +88,7 @@ var displayWeather = function(data) {
 
     else if (condition === "Rain") {
         var rainyEl = document.createElement("img");
-        rainyEl.setAttribute("src", "./images/rain.png"); 
+        rainyEl.setAttribute("src", "./images/rainy.png"); 
         rainyEl.className = "weather-icon"; 
         resultsContainer.append(rainyEl); 
     }
@@ -128,8 +128,43 @@ var displayForecast = function(data){
     data.forEach(function(item){
      var card = document.createElement("div");
      card.setAttribute("class", "forecastCard");
-     card.innerText = item.main.temp;
+  //   card.innerText = item.main.temp;
+    card.innerHTML = `
+    <div class="col-sm-6">
+    <div class="">
+      <div class="">
+        <h5 class="">${item.dt_txt.slice(0,10)}</h5>
+        <img src=""alt = "weather forecast icon"id = ${item.dt_txt.slice(0,10)}>
+        <p class="">Temp:${item.main.temp}</p>
+        <p class="">Wind:${item.wind.speed}mph</p>
+        <p class="">Humidity:${item.main.humidity}%</p>
+      </div>
+    </div>
+  </div>
+    `
      document.getElementById("forecastResults").append(card);
+     document.getElementById(item.dt_txt.slice(0,10));
+     var condition= item.weather[0].main; 
+
+    if (condition === "Clear") {
+        var sunnyEl = document.getElementById(item.dt_txt.slice(0,10));
+        sunnyEl.setAttribute("src", "./images/clear.png"); 
+        sunnyEl.className = "weather-icon";  
+    }
+
+    else if (condition === "Clouds") {
+        var cloudyEl = document.getElementById(item.dt_txt.slice(0,10));
+        cloudyEl.setAttribute("src", "./images/clouds.png"); 
+        cloudyEl.className = "weather-icon"; 
+    //    resultsContainer.append(cloudyEl); 
+    }
+
+    else if (condition === "Rain") {
+        var rainyEl = document.getElementById(item.dt_txt.slice(0,10));
+        rainyEl.setAttribute("src", "./images/rainy.png"); 
+        rainyEl.className = "weather-icon"; 
+     //   resultsContainer.append(rainyEl); 
+    }
     })
 }
 
